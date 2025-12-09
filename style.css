@@ -1,0 +1,120 @@
+:root{
+  --accent:#0b3d3b;
+  --dark:#0b0b0b;
+  --muted:#606b6a;
+  --bg:#f6f7f6;
+  --card:#fff;
+  --radius:12px;
+  --maxw:900px;
+  --nav-bg: rgba(11,61,59,0.04);
+  --nav-active: #0b3d3b;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  padding:40px 20px;
+  background:var(--bg);
+  font-family:"Inter",sans-serif;
+  display:flex;
+  justify-content:center;
+}
+
+.cv{
+  width:100%;
+  max-width:var(--maxw);
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:24px 30px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.08);
+  position:relative;
+}
+
+/* NAV */
+.toc {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-bottom:18px;
+  padding:10px;
+  border-radius:10px;
+  background:var(--nav-bg);
+}
+.toc a {
+  color:var(--muted);
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:0.95rem;
+  transition:all .18s ease;
+}
+.toc a:hover { transform:translateY(-2px); color:var(--nav-active); background:rgba(11,61,59,0.06); }
+.toc a.active {
+  color:#fff;
+  background:var(--nav-active);
+  box-shadow:0 6px 14px rgba(11,61,59,0.18);
+}
+
+/* NAME HEADER */
+.name-header{
+  text-align:center;
+  margin-bottom:14px;
+}
+.name-header h1{
+  margin:0;
+  font-size:2.2rem;
+  font-family:"Merriweather",serif;
+  color:var(--accent);
+}
+.name-header p{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:1.0rem;
+  font-weight:600;
+}
+
+/* SECTION */
+.section {
+  margin-top:20px;
+  padding:20px 22px;
+  border:1px solid rgba(0,0,0,0.05);
+  border-radius:10px;
+  background:linear-gradient(180deg,#ffffff,#fafdfc);
+}
+
+.section h2 {
+  margin:0 0 12px 0;
+  font-size:1.15rem;
+  color:var(--accent);
+  font-family:"Merriweather",serif;
+}
+
+/* New style */
+.placeholder {
+  border: none;
+  background: transparent;
+  padding: 0;
+  min-height: 0;
+  color: var(--dark);
+  font-style: normal;
+}
+
+.placeholder ul {
+  margin-top: 6px;
+  padding-left: 22px;
+  line-height: 1.55;
+}
+
+.placeholder li {
+  margin-bottom: 4px;
+}
+
+@media(max-width:720px){
+  .cv{padding:18px;}
+  .name-header h1{font-size:1.8rem;}
+  .toc { padding:8px; gap:8px; }
+}
+
+html { scroll-behavior: smooth; }
