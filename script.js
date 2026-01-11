@@ -16,7 +16,6 @@
     a.addEventListener('click', function (e) {
       e.preventDefault();
 
-      // 👉 Active ngay khi click
       setActive(this.dataset.target);
 
       const el = document.getElementById(this.dataset.target);
