@@ -1,22 +1,18 @@
 // Scroll reveal animation
-const reveals = document.querySelectorAll("section, .card");
+const reveals = document.querySelectorAll(".reveal");
 
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-      }
-    });
-  },
-  {
-    threshold: 0.15
-  }
-);
+const revealOnScroll = () => {
+  const windowHeight = window.innerHeight;
 
-reveals.forEach(el => {
-  el.classList.add("reveal");
-  observer.observe(el);
-});
+  reveals.forEach(el => {
+    const elementTop = el.getBoundingClientRect().top;
+    const offset = 100;
 
-console.log("Motion effects enabled");
+    if (elementTop < windowHeight - offset) {
+      el.classList.add("active");
+    }
+  });
+};
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
