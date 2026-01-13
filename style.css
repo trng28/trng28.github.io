@@ -133,7 +133,6 @@ ul {
   }
 }
 
-/* Card hover effect */
 .card {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -143,7 +142,6 @@ ul {
   box-shadow: 0 12px 24px rgba(0,0,0,.08);
 }
 
-/* Resource item hover */
 .resource-item {
   transition: padding-left 0.25s ease, background 0.25s ease;
 }
